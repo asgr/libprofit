@@ -14,6 +14,12 @@ Any number of profiles can be given, all of which are calculated and summed up, 
 Profiles can optionally specify whether the resulting image should be convolved or not.
 If that is the case, then a common PSF convolution matrix must be provided.
 
-libprofit has no compiling dependencies other than libc and libm;
-however some profiles require some high-level functions that can be found in third-party mathematical packages like R or GSL.
+libprofit has no compiling dependencies other than libc and libm; however some profiles require some high-level functions that can be found in third-party mathematical packages like R or GSL.
+
 These functions must thus be provided when linking libprofile into the resulting library or program.
+
+Example of hwo to run it:
+
+./profit-cli -f libprofittest.fits -p sersic:xcen=50:ycen=50:mag=15:re=10:nser=1:ang=30:axrat=0.4 -p sersic:xcen=50:ycen=50:mag=15:re=3:nser=8
+
+This will produce a bulge/disk system.
